@@ -1,0 +1,44 @@
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.scroll-stack-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 2vh;
+  padding-bottom: 40vh; /* runway on desktop */
+}
+
+.scroll-stack-card {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  transform-origin: top center;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.scroll-stack-end {
+  width: 100%;
+  height: 1px;
+}
+
+@media (max-width: 768px) {
+  .scroll-stack-inner {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem; /* no massive blank runway on mobile */
+  }
+  .scroll-stack-card {
+    position: relative !important;
+    transform: none !important;
+    filter: none !important;
+    will-change: auto !important;
+    margin-bottom: 1.5rem !important;
+    touch-action: pan-y;
+  }
+}
